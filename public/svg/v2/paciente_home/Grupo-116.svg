@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="138" height="20" viewBox="0 0 138 20">
+  <g id="Grupo_116" data-name="Grupo 116" transform="translate(-132 -104)">
+    <text id="sair_do_Aplicativo" data-name="sair do Aplicativo" transform="translate(149 119)" fill="#fff" font-size="14" font-family="Poppins-Regular, Poppins"><tspan x="0" y="0">sair do Aplicativo</tspan></text>
+    <g id="logout" transform="translate(126.07 104.051)">
+      <path id="Linha_1" data-name="Linha 1" d="M6.95.136H-.432A.568.568,0,0,1-1-.432.568.568,0,0,1-.432-1H6.95a.568.568,0,0,1,.568.568A.568.568,0,0,1,6.95.136Z" transform="translate(12.035 10.382)" fill="#fff"/>
+      <path id="Caminho_475" data-name="Caminho 475" d="M16.151,15.06v1.7H7.066V3.136h9.085v1.7h1.136V2.568A.568.568,0,0,0,16.719,2H6.5a.568.568,0,0,0-.568.568V17.331A.568.568,0,0,0,6.5,17.9H16.719a.568.568,0,0,0,.568-.568V15.06Z" fill="#fff"/>
+      <path id="Linha_2" data-name="Linha 2" d="M-.432,2.407a.566.566,0,0,1-.4-.166.568.568,0,0,1,0-.8L1.438-.834a.568.568,0,0,1,.8,0,.568.568,0,0,1,0,.8L-.031,2.241A.566.566,0,0,1-.432,2.407Z" transform="translate(17.145 10.382)" fill="#fff"/>
+      <path id="Linha_3" data-name="Linha 3" d="M1.839,2.407a.566.566,0,0,1-.4-.166L-.834-.031a.568.568,0,0,1,0-.8.568.568,0,0,1,.8,0L2.241,1.438a.568.568,0,0,1-.4.969Z" transform="translate(17.145 8.11)" fill="#fff"/>
+      <path id="Linha_4" data-name="Linha 4" d="M-.432,1.271A.568.568,0,0,1-1,.7V-.432A.568.568,0,0,1-.432-1a.568.568,0,0,1,.568.568V.7A.568.568,0,0,1-.432,1.271Z" transform="translate(17.145 4.755)" fill="#fff"/>
+      <path id="Linha_5" data-name="Linha 5" d="M-.432,1.271A.568.568,0,0,1-1,.7V-.432A.568.568,0,0,1-.432-1a.568.568,0,0,1,.568.568V.7A.568.568,0,0,1-.432,1.271Z" transform="translate(17.145 14.924)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "nome": "Dr. João Silva",
+    "foto": "https://randomuser.me/api/portraits/men/1.jpg",
+    "latitude": -31.722998,
+    "longitude": -52.358097,
+    "especialidades": ["Clínico Geral", "Pediatria"],
+    "urgencia": ["Emergência", "Consulta Regular"],
+    "cidade": "Pelotas",
+    "uf": "RS",
+    "telefone": "5553999999999"
+  },
+  {
+    "id": "2",
+    "nome": "Dra. Maria Santos",
+    "foto": "https://randomuser.me/api/portraits/women/2.jpg",
+    "latitude": -31.721998,
+    "longitude": -52.357097,
+    "especialidades": ["Ortodontia", "Endodontia"],
+    "urgencia": ["Consulta Regular"],
+    "cidade": "Pelotas",
+    "uf": "RS",
+    "telefone": "5553999999998"
+  },
+  {
+    "id": "3",
+    "nome": "Dr. Pedro Oliveira",
+    "foto": "https://randomuser.me/api/portraits/men/3.jpg",
+    "latitude": -31.719998,
+    "longitude": -52.359097,
+    "especialidades": ["Cirurgia Oral", "Implantodontia"],
+    "urgencia": ["Emergência"],
+    "cidade": "Pelotas",
+    "uf": "RS",
+    "telefone": "5553999999997"
+  },
+  {
+    "id": "4",
+    "nome": "Dra. Ana Costa",
+    "foto": "https://randomuser.me/api/portraits/women/4.jpg",
+    "latitude": -31.723998,
+    "longitude": -52.356097,
+    "especialidades": ["Periodontia", "Clínico Geral"],
+    "urgencia": ["Consulta Regular", "Emergência"],
+    "cidade": "Pelotas",
+    "uf": "RS",
+    "telefone": "5553999999996"
+  },
+  {
+    "id": "5",
+    "nome": "Dr. Carlos Ferreira",
+    "foto": "https://randomuser.me/api/portraits/men/5.jpg",
+    "latitude": -31.720998,
+    "longitude": -52.360097,
+    "especialidades": ["Odontopediatria"],
+    "urgencia": ["Consulta Regular"],
+    "cidade": "Pelotas",
+    "uf": "RS",
+    "telefone": "5553999999995"
+  }
+]

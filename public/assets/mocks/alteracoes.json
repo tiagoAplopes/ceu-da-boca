@@ -1,0 +1,258 @@
+[
+  {
+    "id": 1,
+    "nome": "Abcesso (bolha) ",
+    "descricao": "Os abscessos dentários são caracterizados pela formação de pus na região bucal devido a uma infecção bacteriana. Há dois tipos de abscesso: o periodontal e o periapical. O abscesso periodontal ocorre entre o dente e a gengiva, enquanto a infecção periapical se instala na raiz do dente. Ele pode surgir e desaparecer o que não exclui a necessidade de procura profissional.",
+    "created_at": "2020-07-14T16:09:35.396-03:00",
+    "updated_at": "2020-09-10T16:57:55.925-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/1.json"
+  },
+  {
+    "id": 5,
+    "nome": "Ardência bucal",
+    "descricao": "Pode ser idiopática (que se forma ou se manifesta espontaneamente ou a partir de causas obscuras ou desconhecidas) ou provocada por doença: deficiência nutricional (vitamina B12, ferro), Diabetes melito, Infecção por Candida (candidíase), Alergia (alimentos, produtos odontológicos), Xerostomia (ou boca seca significativa), fármacos Inibidores da ECA.",
+    "created_at": "2020-07-14T16:10:24.171-03:00",
+    "updated_at": "2020-09-10T16:59:52.346-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/5.json"
+  },
+  {
+    "id": 2,
+    "nome": "Área avermelhada em mucosa",
+    "descricao": "Dentre as principais lesões vermelhas que afetam a cavidade bucal destacam-se: a candidíase eritematosa, a queilite angular, o eritema migratório, o líquen plano, o pênfigo vulgar, o penfigóide das membranas mucosas, o lúpus eritematoso, o hemangioma e a eritroplasia. Procure um profissional para realizar o diagnóstico.",
+    "created_at": "2020-07-14T16:09:51.512-03:00",
+    "updated_at": "2022-07-25T16:42:28.812-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/2.json"
+  },
+  {
+    "id": 4,
+    "nome": "Área enegrecida em mucosa",
+    "descricao": "As lesões pigmentadas da cavidade oral representam uma variedade de entidades clínicas que incluem desde alterações fisiológicas, como a pigmentação racial, à manifestações sistêmicas, caso da doença de Addison e ainda a presença de neoplasias, citando-se neste caso o melanoma. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:10:15.149-03:00",
+    "updated_at": "2022-07-25T16:43:09.993-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/4.json"
+  },
+  {
+    "id": 3,
+    "nome": "Área esbranquiçada em mucosa",
+    "descricao": "Candidíase, leucoplasia, líquen plano, grânulos de Fordyce, estomatite nicotínica, leucoplasia pilosa, sífilis secundária. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:10:01.643-03:00",
+    "updated_at": "2022-07-25T16:43:20.960-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/3.json"
+  },
+  {
+    "id": 27,
+    "nome": "Ausência Dental",
+    "descricao": "Falta de um ou mais dentes.",
+    "created_at": "2022-09-20T14:41:57.306-03:00",
+    "updated_at": "2022-09-20T14:41:57.306-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/27.json"
+  },
+  {
+    "id": 25,
+    "nome": "Câimbras na musculatura da face/pescoço",
+    "descricao": "Problemas musculares, dentários ou articulares. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2021-07-01T18:41:54.983-03:00",
+    "updated_at": "2022-07-25T16:44:25.675-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/25.json"
+  },
+  {
+    "id": 13,
+    "nome": "Dente amolecido ",
+    "descricao": "Pode estar associado a doença periodontal (tecidos de sustentação do dente) ou a carga mastigatória excessiva. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:11:41.590-03:00",
+    "updated_at": "2022-07-25T16:44:36.867-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/13.json"
+  },
+  {
+    "id": 16,
+    "nome": "Dente com cavidade",
+    "descricao": "O dente apresenta uma cavidade quando esta é derivada do avanço da doença cárie ou alguma restauração que soltou. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:12:12.245-03:00",
+    "updated_at": "2022-07-25T16:44:55.946-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/16.json"
+  },
+  {
+    "id": 9,
+    "nome": "Dente com mancha branca",
+    "descricao": "As manchas brancas no dente podem ser indicativas de cárie em estágio inicial, excesso de flúor ou alteração na formação do esmalte do dente. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:11:03.044-03:00",
+    "updated_at": "2022-07-25T16:45:05.762-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/9.json"
+  },
+  {
+    "id": 7,
+    "nome": "Dente com mancha marrom ",
+    "descricao": "A mancha marrom no dente pode ser indicativa de cárie em estágio avançado e ativa, ou aderência de tártaro na superfície dental. Pode estar associada a ingestão de alimentos corantes (café, chá preto) e ao tabagismo. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:10:44.292-03:00",
+    "updated_at": "2022-07-25T16:45:28.311-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/7.json"
+  },
+  {
+    "id": 8,
+    "nome": "Dente com mancha preta",
+    "descricao": "Pode ser doença cárie em estado avançado ou pigmentação pela alimentação. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:10:53.605-03:00",
+    "updated_at": "2022-07-25T16:46:26.002-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/8.json"
+  },
+  {
+    "id": 12,
+    "nome": "Dente desgastado (gasto)",
+    "descricao": "O dente se apresenta desgastado por forças mastigatórias excessivas ou hábitos parafuncionais como o bruxismo. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:11:31.842-03:00",
+    "updated_at": "2024-09-12T16:50:12.782-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/12.json"
+  },
+  {
+    "id": 10,
+    "nome": "Dente escurecido",
+    "descricao": "O dente estar apresentando uma coloração diferente dos demais, um tom mais amarelado ou acinzentado pode estar associado a um trauma que levou a necrose pulpar ou ao tratamento de canal já realizado. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:11:12.686-03:00",
+    "updated_at": "2022-07-25T16:46:53.461-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/10.json"
+  },
+  {
+    "id": 11,
+    "nome": "Dente fraturado (quebrado)",
+    "descricao": "O dente se apresenta fraturado quando sofre um trauma, uma pancada. Muito comum o dente fraturar durante a mastigação de alimentos mais endurecidos ou queda. A fratura pode comprometer pedaço pequeno ou grande parte do dente. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:11:22.749-03:00",
+    "updated_at": "2024-09-12T16:50:29.787-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/11.json"
+  },
+  {
+    "id": 63,
+    "nome": "Dente incluso ou impactado ",
+    "descricao": "Um dente incluso ou dente impactado é aquele que não conseguiu erupcionar corretamente, ou seja, não conseguiu \"nascer\" completamente na boca devido a bloqueios ou falta de espaço na arcada dentária.",
+    "created_at": "2024-09-13T17:03:36.302-03:00",
+    "updated_at": "2024-09-13T17:03:36.302-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/63.json"
+  },
+  {
+    "id": 14,
+    "nome": "Dentes tortos (desalinhados)",
+    "descricao": "O dente está fora da posição normal do alinhamento da arcada. Estão relacionadas a problemas ortodônticos de crescimento facial e posicionamento dental inadequado. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:11:51.823-03:00",
+    "updated_at": "2024-09-12T16:50:52.201-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/14.json"
+  },
+  {
+    "id": 15,
+    "nome": "Dor  de dente",
+    "descricao": "As causas mais comuns de dor de dente em adultos e crianças são cárie e as doenças periodontais, que afetam as estruturas de sustentação do dente. Se for associada ao terceiro molar (dente siso) pode ser uma quadro de inflamação local (pericoronarite). Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:12:03.243-03:00",
+    "updated_at": "2022-07-25T16:47:59.215-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/15.json"
+  },
+  {
+    "id": 26,
+    "nome": "Dores de Cabeça ",
+    "descricao": "Inúmeras causas. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2021-07-01T18:42:46.185-03:00",
+    "updated_at": "2022-07-25T16:49:33.005-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/26.json"
+  },
+  {
+    "id": 24,
+    "nome": "Dores na face e articulação mandibular",
+    "descricao": "Pode estar associada a desordens temporo-mandibulares. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2021-07-01T18:41:18.415-03:00",
+    "updated_at": "2024-09-12T16:51:22.432-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/24.json"
+  },
+  {
+    "id": 17,
+    "nome": "Dormência",
+    "descricao": "Pode ser um sintoma pós-cirúrgico ou estar associada a desordens temporo-mandibulares. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:12:21.911-03:00",
+    "updated_at": "2022-07-25T16:51:44.994-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/17.json"
+  },
+  {
+    "id": 18,
+    "nome": "Feridas (Aftas e outras)",
+    "descricao": "As mais comuns são as aftas, o herpes simples, a leucoplasia (placa branca) e a candidíase (sapinho). Podem estar associadas a um agente agressor como fio ortodôntico solto, a dentaduras, dente quebrado ou restauração não-polida. Geralmente cicatriza em 7 dias. Caso não, a ida ao dentista se torna indispensável.",
+    "created_at": "2020-07-14T16:12:35.587-03:00",
+    "updated_at": "2024-09-12T17:12:10.730-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/18.json"
+  },
+  {
+    "id": 29,
+    "nome": "Flacidez Facial",
+    "descricao": "Notada quando a pele do rosto perde firmeza e elasticidade. Isso pode ocorrer devido ao envelhecimento natural, exposição solar excessiva ou perda de peso. Recomenda-se avaliação adicional para entender as causas específicas e considerar opções de tratamento, se necessário.",
+    "created_at": "2023-09-29T15:19:23.340-03:00",
+    "updated_at": "2023-12-14T14:49:26.516-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/29.json"
+  },
+  {
+    "id": 19,
+    "nome": "Gengiva avermelhada ",
+    "descricao": "Sinal de inflamação gengival (gengivite).",
+    "created_at": "2020-07-14T16:12:46.063-03:00",
+    "updated_at": "2020-09-10T16:58:33.208-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/19.json"
+  },
+  {
+    "id": 6,
+    "nome": "Nódulo (Caroço) ",
+    "descricao": "Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:10:34.729-03:00",
+    "updated_at": "2024-09-12T16:51:39.021-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/6.json"
+  },
+  {
+    "id": 31,
+    "nome": "Paralisia ou Parestesia Facial",
+    "descricao": "A parestesia é uma sensação anormal de formigamento, dormência, coceira, ardência ou \"alfinetes e agulhas\" na pele, sem uma causa aparente. Ela pode ocorrer em qualquer parte do corpo, mas quando acontece no rosto, pode ser um sintoma desconfortável que afeta a qualidade de vida.\r\nA paralisia facial é a perda parcial ou completa do movimento dos músculos de um lado do rosto (ou, em casos raros, de ambos os lados). Isso geralmente se manifesta como uma incapacidade de mover o rosto, fechar o olho, levantar a sobrancelha, ou sorrir do lado afetado.\r\n",
+    "created_at": "2024-09-12T16:54:35.210-03:00",
+    "updated_at": "2024-09-12T17:15:40.686-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/31.json"
+  },
+  {
+    "id": 20,
+    "nome": "Problema com prótese ",
+    "descricao": "Rompimento de provisórios, infiltrações, folgas, queda ou outra situação que requer um reparo ou cimentação. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:12:54.880-03:00",
+    "updated_at": "2024-09-12T16:52:08.284-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/20.json"
+  },
+  {
+    "id": 22,
+    "nome": "Problemas com aparelho ortodôntico  ",
+    "descricao": "Problemas com aparelho ortodôntico. Problemas com fio, braquetes e borracha. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-09-16T15:33:33.229-03:00",
+    "updated_at": "2022-07-25T16:53:13.345-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/22.json"
+  },
+  {
+    "id": 30,
+    "nome": "Problemas com Implante",
+    "descricao": "Qualquer problema que envolva os implantes devem ser resolvidos imediatamente.",
+    "created_at": "2024-09-12T16:53:47.384-03:00",
+    "updated_at": "2024-09-12T16:53:47.384-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/30.json"
+  },
+  {
+    "id": 28,
+    "nome": "Rugas e marcas de expressão",
+    "descricao": "São linhas ou dobras que se formam na pele ao longo do tempo, geralmente como resultado do envelhecimento natural, exposição ao sol, movimentos faciais repetitivos, e outros fatores como estresse, poluição e estilo de vida.",
+    "created_at": "2023-09-29T15:18:59.918-03:00",
+    "updated_at": "2024-09-12T17:13:03.976-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/28.json"
+  },
+  {
+    "id": 21,
+    "nome": "Sangramento gengival",
+    "descricao": "Pode ser uma gengivite (inflamação gengival) ou periodontite (inflamação nos tecidos de sustentação do dente). Geralmente é percebida durante a escovação ou uso do fio dental. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2020-07-14T16:13:03.780-03:00",
+    "updated_at": "2022-07-25T16:53:27.565-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/21.json"
+  },
+  {
+    "id": 23,
+    "nome": "Sensibilidade",
+    "descricao": "A melhor maneira de descobrir a causa da sensibilidade dentária é pedir ao dentista que examine seus dentes. O dentista vai observar sinais de exposição da dentina e realizar testes para determinar a causa real da sensibilidade. Por vezes, a sensibilidade tem sua origem em cárie dentária ou doenças gengivais. Essas duas causas podem ser tratadas. Outras vezes, a sensibilidade é provocada pelo desgaste do esmalte, seja por abrasão ou erosão, ou, ainda, pela retração gengival, que deixa exposta a raiz do dente. Procure um profissional para fazer o diagnóstico.",
+    "created_at": "2021-07-01T18:38:47.326-03:00",
+    "updated_at": "2022-07-25T16:53:40.365-03:00",
+    "url": "https://admin-ceu-da-boca.herokuapp.com/alteracoes/23.json"
+  }
+]

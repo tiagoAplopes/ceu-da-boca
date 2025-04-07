@@ -1,0 +1,27 @@
+<?xml version="1.0"?><svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>star gray</title>
+ <defs>
+  <linearGradient id="G0">
+   <stop stop-color="#e6cf00" offset="0" id="s1"/>
+   <stop stop-color="#fde94a" offset="1" id="s2"/>
+  </linearGradient>
+  <linearGradient id="G1">
+   <stop stop-color="#fcf9fb" offset="0" id="s3"/>
+   <stop stop-color="#fcf9fb" stop-opacity="0" offset="1" id="s4"/>
+  </linearGradient>
+  <linearGradient id="G2">
+   <stop stop-color="#000000" stop-opacity="0.63" offset="0" id="s5"/>
+   <stop stop-color="#000000" stop-opacity="0" offset="1" id="s6"/>
+  </linearGradient>
+  <linearGradient xlink:href="#G1" id="G3" y2="1.166608" x2="0.499518" y1="0.128371" x1="0.269742"/>
+  <radialGradient gradientTransform="matrix(1,-0.2,0.2,1,-3.8,6.8)" gradientUnits="userSpaceOnUse" xlink:href="#G0" id="R0" fy="22" fx="24" r="22" cy="22" cx="24"/>
+  <radialGradient gradientTransform="matrix(2.4,0,0,0.67,-17.1,22.4)" gradientUnits="userSpaceOnUse" xlink:href="#G2" id="R1" fy="25.53125" fx="17.3125" r="9.6875" cy="25.53125" cx="17.3125"/>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <path opacity="0.5" fill="url(#R1)" id="s" d="m47,39.5c0,3.589668 -10.297451,6.5 -23,6.5c-12.70255,0 -23,-2.910332 -23,-6.5c0,-3.59 10.29745,-7.5 23,-7.5c12.702549,0 23,3.909969 23,7.5z"/>
+  <path fill="url(#R0)" stroke="#7a7a7a" id="star" d="m37.310532,41.5l-13.279892,-6.673882c-4.43185,2.215111 -8.863689,4.430222 -13.29554,6.645332l2.55431,-14.102362l-10.73825,-10.00075l14.85854,-2.04204l6.658939,-12.8263l6.62878,12.84049l14.853689,2.073759l-10.76173,9.977791l2.521152,14.10796z"/>
+  <path opacity="0.8" fill="url(#G3)" id="hl" d="m17.731859,15.79089l6.331881,-12.20407l6.30571,12.20798l14.070702,1.9667l-3.619751,3.36001c-16.43751,-3.6875 -9.455379,7.22047 -27.56865,9.24321l0.56805,-3.180399l-10.15935,-9.46563c0,0 14.071409,-1.927801 14.071409,-1.927801z"/>
+  <path opacity="0.69" fill="none" stroke="#ffffff" id="ol" d="m35.973751,39.71283l-11.945421,-6.003448l-11.9458,5.968948l2.28024,-12.66979l-9.58513,-8.93829l13.27844,-1.82233l6.00671,-11.569569l5.982441,11.577389l13.277729,1.857321l-9.609261,8.921721l2.260052,12.678049z"/>
+ </g>
+</svg>
