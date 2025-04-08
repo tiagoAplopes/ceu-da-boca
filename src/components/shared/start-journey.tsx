@@ -179,7 +179,7 @@ export default function StartJourney({
               </div>
 
               {/* Content Card */}
-              <div className="rounded-3xl bg-gradient-to-br from-blue-700 to-violet-700 p-6 shadow-lg md:h-auto min-h-[calc(100vh-100px)] md:min-h-0 flex flex-col">
+              <div className="rounded-3xl bg-gradient-to-br from-blue-700 to-indigo-500 p-6 shadow-lg md:h-auto min-h-[calc(100vh-100px)] md:min-h-0 flex flex-col">
                 {/* Progress Bar */}
                 <div className="w-full bg-white/20 h-2 rounded-full mb-8">
                   <div
@@ -315,14 +315,14 @@ export default function StartJourney({
                 {/* Navigation Buttons - Agora no final do flex container */}
                 <div className="flex gap-4 justify-between mt-6">
                   <Link href={previousPath}>
-                    <Button className="bg-blue-500 text-white px-8 hover:bg-blue-600 cursor-pointer">
-                      VOLTAR
+                    <Button className="bg-white text-blue-600 px-8 cursor-pointer hover:bg-white/90 hover:text-blue-700">
+                      Voltar
                     </Button>
                   </Link>
 
                   <Link href={nextPath}>
-                    <Button className="bg-blue-500 text-white px-8 hover:bg-blue-600 cursor-pointer">
-                      PRÓXIMO
+                    <Button className="bg-white text-blue-600 px-8 cursor-pointer  hover:bg-white/90 hover:text-blue-700">
+                      Próximo
                     </Button>
                   </Link>
                 </div>

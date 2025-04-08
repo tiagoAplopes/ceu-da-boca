@@ -61,13 +61,24 @@ export default function HomePage() {
         <Separator className="my-8" />
 
         {/* Welcome Card */}
-        <Card className="mb-8 bg-blue-600 text-white">
-          <CardHeader>
-            <CardTitle>Seja bem-vindo!</CardTitle>
-            <CardDescription className="text-white/80">
-              Estamos felizes em ter você aqui. Explore todas as funcionalidades
-              disponíveis.
-            </CardDescription>
+        <Card className="mb-8 bg-blue-600 text-white overflow-hidden">
+          <CardHeader className="flex flex-row items-center justify-between h-[100px] md:h-auto ">
+            <div className="max-w-[60%]">
+              <CardTitle className="text-lg md:text-2xl">
+                Seja bem-vindo!
+              </CardTitle>
+              <CardDescription className="text-white/80 hidden md:block">
+                Estamos felizes em ter você aqui. Explore todas as
+                funcionalidades disponíveis.
+              </CardDescription>
+            </div>
+            <Image
+              src="/svg/home-dentist.svg"
+              alt="Dentista"
+              width={200}
+              height={200}
+              className="-mr-8 -mb-8 -mt-8 w-[160px] h-[160px] md:w-[200px] md:h-[200px] object-contain"
+            />
           </CardHeader>
         </Card>
 
@@ -76,12 +87,12 @@ export default function HomePage() {
           {/* Card 1 */}
           <Link href="/paciente/comecar-jornada">
             <Card className="cursor-pointer hover:bg-accent transition-colors relative group">
-              <CardHeader className="flex flex-row items-center gap-4">
+              <CardHeader className="flex flex-row items-center gap-4 pr-0 pl-3">
                 <Image
                   src="/svg/v3/Group 98.png"
                   alt="Começar jornada"
-                  width={40}
-                  height={40}
+                  width={60}
+                  height={60}
                 />
                 <div>
                   <CardTitle>Comece sua jornada</CardTitle>
@@ -99,12 +110,12 @@ export default function HomePage() {
           {/* Card 2 */}
           <Link href="/paciente/alteracoes-encontradas">
             <Card className="cursor-pointer hover:bg-accent transition-colors relative group">
-              <CardHeader className="flex flex-row items-center gap-4">
+              <CardHeader className="flex flex-row items-center gap-4 pr-0 pl-3">
                 <Image
                   src="/svg/v3/Frame 4.png"
                   alt="Alterações encontradas"
-                  width={40}
-                  height={40}
+                  width={60}
+                  height={60}
                 />
                 <div>
                   <CardTitle>Alterações encontradas</CardTitle>
@@ -122,12 +133,12 @@ export default function HomePage() {
           {/* Card 3 */}
           <Link href="/paciente/nossa-constelacao">
             <Card className="cursor-pointer hover:bg-accent transition-colors relative group">
-              <CardHeader className="flex flex-row items-center gap-4">
+              <CardHeader className="flex flex-row items-center gap-4 pr-0 pl-3">
                 <Image
                   src="/svg/v3/Frame 10.png"
                   alt="Nossa constelação"
-                  width={40}
-                  height={40}
+                  width={60}
+                  height={60}
                 />
                 <div>
                   <CardTitle>Nossa constelação</CardTitle>
@@ -145,12 +156,12 @@ export default function HomePage() {
           {/* Novo Card - Meu Espaço */}
           <Link href="/paciente/perfil">
             <Card className="cursor-pointer hover:bg-accent transition-colors relative group">
-              <CardHeader className="flex flex-row items-center gap-4">
+              <CardHeader className="flex flex-row items-center gap-4 pr-0 pl-3">
                 <Image
                   src="/svg/v3/Frame 10 (1).png"
                   alt="Meu espaço"
-                  width={40}
-                  height={40}
+                  width={60}
+                  height={60}
                 />
                 <div>
                   <CardTitle>Meu Espaço</CardTitle>
