@@ -1,0 +1,21 @@
+/* Estilização da barra de rolagem */
+.overflow-x-auto::-webkit-scrollbar {
+  width: 1px;
+  height: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease, margin-right 0.3s ease;
+}
+
+.overflow-x-auto:hover::-webkit-scrollbar {
+  opacity: 1;
+  margin-right: 8px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background-color: #0368DF;
+  border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background-color: #E1E1E1;
+}

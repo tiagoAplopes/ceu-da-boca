@@ -39,6 +39,7 @@ export default function PerfilProfissional({
   const resolvedParams = use(params);
   const [profissional, setProfissional] = useState<Profissional | null>(null);
   const [usuario, setUsuario] = useState<Usuario | null>(null);
+  const [visitaRegistrada, setVisitaRegistrada] = useState(false);
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
@@ -62,13 +63,25 @@ export default function PerfilProfissional({
           throw new Error("Falha ao carregar dados do usuário");
         const dataUsuario = await responseUsuario.json();
         setUsuario(dataUsuario);
+
+        // Registrar visita apenas uma vez
+        if (!visitaRegistrada) {
+          await fetch("/api/dentista/registrar-visita", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ dentistaId: resolvedParams.id }),
+          });
+          setVisitaRegistrada(true);
+        }
       } catch (error) {
         console.error("Erro ao carregar dados:", error);
       }
     };
 
     loadData();
-  }, [resolvedParams.id]);
+  }, [resolvedParams.id, visitaRegistrada]);
 
   const handleWhatsApp = () => {
     if (!profissional?.telefone || !usuario?.nome) return;

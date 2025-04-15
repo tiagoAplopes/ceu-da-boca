@@ -10,10 +10,10 @@ export default function ComecarJornadaPage() {
 
   return (
     <main className="min-h-screen bg-white flex flex-col items-center justify-center p-4">
-      <Card className="w-full max-w-md">
+      <Card className="w-full max-w-md border border-blue-100 hover:border-blue-200">
         <CardContent className="p-6 space-y-6">
           {/* Header Image */}
-          <div className="flex justify-center bg-gradient-to-br from-blue-600 to-indigo-300a rounded-sm">
+          <div className="flex justify-center bg-gradient-to-br from-blue-600 to-indigo-300 rounded-sm">
             <Image
               src="/svg/dentist-exame.svg"
               alt="Autoexame"
@@ -43,7 +43,7 @@ export default function ComecarJornadaPage() {
             {/* Tips Cards */}
             <div className="flex overflow-x-auto gap-2 py-4 px-2 -mx-2">
               <div className="flex-none w-48">
-                <div className="bg-white rounded-lg border p-4 flex flex-col items-center text-center h-40">
+                <div className="bg-white rounded-lg border border-blue-100 hover:border-blue-200 p-4 flex flex-col items-center text-center h-40">
                   <div className="bg-blue-600 rounded-full p-3 mb-2">
                     <Image
                       src="/svg/v3/002-idea.svg"
@@ -57,7 +57,7 @@ export default function ComecarJornadaPage() {
               </div>
 
               <div className="flex-none w-48">
-                <div className="bg-white rounded-lg border p-4 flex flex-col items-center text-center h-40">
+                <div className="bg-white rounded-lg border border-blue-100 hover:border-blue-200 p-4 flex flex-col items-center text-center h-40">
                   <div className="bg-blue-600 rounded-full p-3 mb-2">
                     <Image
                       src="/svg/v3/001-dental-veneer.svg"
@@ -73,7 +73,7 @@ export default function ComecarJornadaPage() {
               </div>
 
               <div className="flex-none w-48">
-                <div className="bg-white rounded-lg border p-4 flex flex-col items-center text-center h-40">
+                <div className="bg-white rounded-lg border border-blue-100 hover:border-blue-200 p-4 flex flex-col items-center text-center h-40">
                   <div className="bg-blue-600 rounded-full p-3 mb-2">
                     <Image
                       src="/svg/v3/mirror.svg"
@@ -89,7 +89,7 @@ export default function ComecarJornadaPage() {
               </div>
 
               <div className="flex-none w-48">
-                <div className="bg-white rounded-lg border p-4 flex flex-col items-center text-center h-40">
+                <div className="bg-white rounded-lg border border-blue-100 hover:border-blue-200 p-4 flex flex-col items-center text-center h-40">
                   <div className="bg-blue-600 rounded-full p-3 mb-2">
                     <Image
                       src="/svg/v3/005-tripod.svg"
@@ -105,7 +105,7 @@ export default function ComecarJornadaPage() {
               </div>
 
               <div className="flex-none w-48">
-                <div className="bg-white rounded-lg border p-4 flex flex-col items-center text-center h-40">
+                <div className="bg-white rounded-lg border border-blue-100 hover:border-blue-200 p-4 flex flex-col items-center text-center h-40">
                   <div className="bg-blue-600 rounded-full p-3 mb-2">
                     <Image
                       src="/svg/v3/006-towel.svg"

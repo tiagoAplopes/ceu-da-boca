@@ -11,6 +11,10 @@ export default function Passo1Page() {
       nextPath="/paciente/passo-7"
       previousPath="/paciente/passo-5"
       progressClassName="w-6/6"
+      instructionList={[
+        "Para isso abra a boca o máximo que puder e estenda sua observação até a área próxima a garganta.",
+        "Fique atento se encontrar feridas áreas com mudança de coloração ou nódulos."
+      ]}
     />
   );
 } 

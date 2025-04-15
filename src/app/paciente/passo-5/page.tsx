@@ -11,6 +11,11 @@ export default function Passo5Page() {
       nextPath="/paciente/passo-6"
       previousPath="/paciente/passo-4"
       progressClassName="w-5/6"
+      instructionList={[
+        "Puxe a língua para o lado esquerdo e direito e observe a sua lateral.",
+        "Agora pode soltar. Olhe a língua por cima onde estão as papilas gustativas e depois por baixo local onde chamamos de assoalho lingual.",
+        "Fique atento a mudanças de coloração feridas ou bolhas."
+      ]}
     />
   );
 } 

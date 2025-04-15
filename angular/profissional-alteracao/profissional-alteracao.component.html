@@ -1,0 +1,22 @@
+<div class="min-h-screen gap-4 w-full flex flex-col bg-gray-300 py-5 px-6 items-center">
+  <header class="flex flex-row items-center justify-center">
+    <img (click)="goBack()" class="absolute left-5" src="../../../../assets/svg/v3/left-arrow-blue.svg" alt="" srcset=""/>
+    <p class="text-blue-600 font-bold">Editar alterações</p>
+  </header>
+  <div class="gap-4 flex flex-col items-center max-w-[480px]">
+  <p class="text-black">Marque as alterações que fazem parte da sua área
+    profissional</p>
+  <form action="" class="form">
+    <div *ngFor="let alteracao of alteracoes">
+      <input type="checkbox" class="alteracao" value="{{alteracao.id}}" *ngIf="existeAlteracao(alteracao)" checked="checked" id="alteracao-{{alteracao.id}}">
+      <input type="checkbox" class="alteracao" value="{{alteracao.id}}" *ngIf="!existeAlteracao(alteracao)" id="alteracao-{{alteracao.id}}">
+      <label for="alteracao-{{alteracao.id}}">
+        {{alteracao.nome}}
+      </label>
+    </div>
+  </form>
+  <div class="align-items-center">
+    <button type="button" class="bg-blue-600 text-white font-bold h-10 rounded-lg" style="width:150px"  (click)="salvar()">Salvar</button>
+  </div>
+</div>
+</div>

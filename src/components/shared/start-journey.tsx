@@ -5,6 +5,7 @@ import { useCameraStore } from "@/store/camera-store";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
+import { Landmark } from "lucide-react";
 
 interface StartJourneyProps {
   title: string;
@@ -13,6 +14,7 @@ interface StartJourneyProps {
   nextPath: string;
   previousPath?: string;
   progressClassName?: string;
+  instructionList?: string[];
 }
 
 export default function StartJourney({
@@ -22,6 +24,12 @@ export default function StartJourney({
   nextPath = "/paciente/passo-1",
   previousPath = "/paciente/comecar-jornada",
   progressClassName = "w-1/6",
+  instructionList = [
+    "Apalpe com as pontas dos dedos das duas mãos a área do seu pescoço.",
+    "Comece pela base e vá subindo. Chegue com os dedos lá atrás do pescoço e apalpe mais um pouco",
+    "Retorne passando pela área próxima a orelha e pela base da mandíbula.",
+    "Desça novamente, a região do pescoço é lisa fique atento se encontrar algum nódulo.",
+  ],
 }: StartJourneyProps) {
   const { showCamera, setShowCamera } = useCameraStore();
   const [showInstructions, setShowInstructions] = useState(false);
@@ -102,19 +110,55 @@ export default function StartJourney({
     }
   };
 
-  // Componente de áudio que será reutilizado
-  const AudioPlayer = () => (
-    <div
-      className={`rounded-lg p-4 ${
-        showCamera
-          ? "fixed bottom-0 left-0 w-full bg-gradient-to-t from-black/50 to-transparent lg:left-0 lg:w-[40%] z-20"
-          : ""
-      }`}
-    >
-      <h3 className="text-center mb-2 font-medium text-white">
+  // Componente de áudio para desktop - sempre dentro do card
+  const DesktopAudioPlayer = () => (
+    <div className="mt-4 mb-6">
+      <div className="rounded-lg p-4 bg-black/3">
+        <h3 className="text-center mb-3 font-medium text-white flex items-center justify-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M11 5L6 9H2v6h4l5 4V5z" />
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+          </svg>
+          Escute o passo a passo
+        </h3>
+        <audio ref={audioRef} controls className="w-full custom-audio-player">
+          <source src={audioPath} type="audio/mpeg" />
+        </audio>
+      </div>
+    </div>
+  );
+
+  // Componente de áudio para mobile - fixo na parte inferior quando câmera está ativa
+  const MobileAudioPlayer = () => (
+    <div className="lg:hidden fixed bottom-0 left-0 w-full bg-white/10 p-4 rounded-t-lg z-20 shadow-lg">
+      <h3 className="text-center mb-3 font-medium text-white flex items-center justify-center gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M11 5L6 9H2v6h4l5 4V5z" />
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+        </svg>
         Escute o passo a passo
       </h3>
-      <audio ref={audioRef} controls className="w-full">
+      <audio ref={audioRef} controls className="w-full custom-audio-player">
         <source src={audioPath} type="audio/mpeg" />
       </audio>
     </div>
@@ -122,6 +166,59 @@ export default function StartJourney({
 
   return (
     <main className="min-h-screen bg-white flex flex-row">
+      <style jsx global>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: white;
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(255, 255, 255, 0.8);
+        }
+
+        .custom-audio-player {
+          filter: none;
+          opacity: 1;
+        }
+
+        .custom-audio-player::-webkit-media-controls-panel {
+          background-color: white;
+          border-radius: 8px;
+        }
+
+        .custom-audio-player::-webkit-media-controls-current-time-display,
+        .custom-audio-player::-webkit-media-controls-time-remaining-display {
+          color: white;
+        }
+
+        .custom-audio-player::-webkit-media-controls-play-button {
+          background-color: white;
+          border-radius: 50%;
+        }
+
+        .custom-audio-player::-webkit-media-controls-timeline {
+          background-color: rgba(255, 255, 255, 0.2);
+          border-radius: 4px;
+          height: 4px;
+        }
+
+        .custom-audio-player::-webkit-media-controls-volume-slider {
+          background-color: rgba(255, 255, 255, 0.2);
+          border-radius: 4px;
+          height: 4px;
+        }
+
+        .custom-audio-player::-webkit-media-controls-volume-slider::-webkit-slider-thumb,
+        .custom-audio-player::-webkit-media-controls-timeline::-webkit-slider-thumb {
+          background-color: #3b82f6;
+          border-radius: 50%;
+        }
+      `}</style>
       <div
         className={`${
           showCamera ? "w-[40%] h-screen overflow-hidden" : "w-full"
@@ -181,7 +278,7 @@ export default function StartJourney({
               {/* Content Card */}
               <div className="rounded-3xl bg-gradient-to-br from-blue-700 to-indigo-500 p-6 shadow-lg md:h-auto min-h-[calc(100vh-100px)] md:min-h-0 flex flex-col">
                 {/* Progress Bar */}
-                <div className="w-full bg-white/20 h-2 rounded-full mb-8">
+                <div className="w-full bg-white/20 h-2 rounded-full mb-6">
                   <div
                     className={`bg-white h-full rounded-full transition-all duration-300 ${progressClassName}`}
                   ></div>
@@ -189,43 +286,48 @@ export default function StartJourney({
 
                 {/* Main Content */}
                 <div className="flex-1">
-                  <div className="text-white">
-                    <h2 className="text-xl font-medium mb-2">{title}</h2>
+                  <div className="text-white mb-6">
+                    <h2 className="text-xl font-medium mb-3">{title}</h2>
                     <p>{description}</p>
                   </div>
 
-                  {/* Audio Player */}
-                  {!showCamera && <AudioPlayer />}
-
-                  {/* Camera Button */}
-                  <Button
-                    className="w-full bg-white hover:bg-white/90 text-blue-600 flex items-center gap-2 cursor-pointer mb-4"
-                    onClick={() => {
-                      console.log("Botão clicado");
-                      startCamera();
-                    }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                  {/* Camera Button - Only show when camera is not active */}
+                  {!showCamera && (
+                    <Button
+                      className="w-full bg-black/5 hover:bg-black/10 text-white flex items-center justify-center gap-3 cursor-pointer mb-6 py-6 rounded-xl border border-white/20 transition-all duration-300"
+                      onClick={() => {
+                        startCamera();
+                      }}
                     >
-                      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                      <circle cx="12" cy="13" r="4" />
-                    </svg>
-                    Ative a câmera para te auxiliar
-                  </Button>
+                      <div className="flex items-center justify-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="60"
+                          height="60"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                          <circle cx="12" cy="13" r="4" />
+                        </svg>
+                      </div>
+                      <span className="font-medium text-lg">
+                        Ative a câmera para te auxiliar
+                      </span>
+                    </Button>
+                  )}
+
+                  {/* Desktop Audio Player - sempre dentro do card */}
+                  <DesktopAudioPlayer />
 
                   {/* Instructions Section */}
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     <Button
-                      className="w-full bg-blue-500 text-white px-8 hover:bg-blue-600 cursor-pointer justify-between"
+                      className="w-full bg-white hover:bg-white/90 text-blue-600 px-8 cursor-pointer justify-between"
                       onClick={() => setShowInstructions(!showInstructions)}
                     >
                       Instruções em texto
@@ -249,63 +351,26 @@ export default function StartJourney({
 
                     {/* Instructions Cards */}
                     {showInstructions && (
-                      <div className="overflow-x-auto">
+                      <div className="overflow-x-auto custom-scrollbar mt-4">
                         <div
-                          className={`flex gap-4 py-4 px-2 -mx-2 ${
+                          className={`flex gap-4 py-4 px-4 -mx-4 ${
                             showCamera ? "lg:flex-col" : ""
                           }`}
                         >
-                          <div
-                            className={`flex-none ${
-                              showCamera ? "lg:w-full" : "w-[280px]"
-                            }`}
-                          >
-                            <div className="bg-white rounded-lg p-4 shadow-lg h-32">
-                              <p className="text-gray-800">
-                                Apalpe com as pontas dos dedos das duas mãos a
-                                área do seu pescoço.
-                              </p>
+                          {instructionList.map((instruction, index) => (
+                            <div
+                              key={index}
+                              className={`flex-none ${
+                                showCamera ? "lg:w-full" : "w-[280px]"
+                              }`}
+                            >
+                              <div className="bg-white rounded-lg p-5 shadow-lg h-40 flex items-center justify-center">
+                                <p className="text-gray-800 text-center leading-relaxed">
+                                  {instruction}
+                                </p>
+                              </div>
                             </div>
-                          </div>
-
-                          <div
-                            className={`flex-none ${
-                              showCamera ? "lg:w-full" : "w-[280px]"
-                            }`}
-                          >
-                            <div className="bg-white rounded-lg p-4 shadow-lg h-32">
-                              <p className="text-gray-800">
-                                Comece pela base e vá subindo. Chegue com os
-                                dedos lá atrás do pescoço e apalpe mais um pouco
-                              </p>
-                            </div>
-                          </div>
-
-                          <div
-                            className={`flex-none ${
-                              showCamera ? "lg:w-full" : "w-[280px]"
-                            }`}
-                          >
-                            <div className="bg-white rounded-lg p-4 shadow-lg h-32">
-                              <p className="text-gray-800">
-                                Retorne passando pela área próxima a orelha e
-                                pela base da mandíbula.
-                              </p>
-                            </div>
-                          </div>
-
-                          <div
-                            className={`flex-none ${
-                              showCamera ? "lg:w-full" : "w-[280px]"
-                            }`}
-                          >
-                            <div className="bg-white rounded-lg p-4 shadow-lg h-32">
-                              <p className="text-gray-800">
-                                Desça novamente, a região do pescoço é lisa
-                                fique atento se encontrar algum nódulo.
-                              </p>
-                            </div>
-                          </div>
+                          ))}
                         </div>
                       </div>
                     )}
@@ -313,16 +378,46 @@ export default function StartJourney({
                 </div>
 
                 {/* Navigation Buttons - Agora no final do flex container */}
-                <div className="flex gap-4 justify-between mt-6">
-                  <Link href={previousPath}>
-                    <Button className="bg-white text-blue-600 px-8 cursor-pointer hover:bg-white/90 hover:text-blue-700">
-                      Voltar
-                    </Button>
-                  </Link>
+                <div className="flex gap-4 justify-between mt-8">
+                  {progressClassName !== "w-1/6" && (
+                    <Link href={previousPath}>
+                      <Button className="bg-white text-blue-600 px-8 cursor-pointer hover:bg-white/90 hover:text-blue-700 flex items-center gap-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        Voltar
+                      </Button>
+                    </Link>
+                  )}
+
+                  {progressClassName === "w-1/6" && <div></div>}
 
                   <Link href={nextPath}>
-                    <Button className="bg-white text-blue-600 px-8 cursor-pointer  hover:bg-white/90 hover:text-blue-700">
+                    <Button className="bg-white text-blue-600 px-8 cursor-pointer hover:bg-white/90 hover:text-blue-700 flex items-center gap-2">
                       Próximo
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
                     </Button>
                   </Link>
                 </div>
@@ -428,21 +523,51 @@ export default function StartJourney({
             className="w-full h-full object-contain"
           />
 
-          {/* Audio Player será renderizado aqui quando a câmera estiver ativa */}
-          <AudioPlayer />
+          {/* Mobile Audio Player - só aparece quando câmera está ativa em mobile */}
+          {showCamera && <MobileAudioPlayer />}
 
           {/* Bottom Controls - Só aparece em mobile */}
           <div className="lg:hidden absolute bottom-[100px] left-0 w-full bg-gradient-to-t from-black/50 to-transparent p-4">
             <div className="flex gap-4 justify-between">
-              <Link href={previousPath}>
-                <Button className="bg-blue-500 text-white px-8 hover:bg-blue-600 cursor-pointer">
-                  VOLTAR
-                </Button>
-              </Link>
+              {progressClassName !== "w-1/6" && (
+                <Link href={previousPath}>
+                  <Button className="bg-blue-500 text-white px-8 hover:bg-blue-600 cursor-pointer flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    VOLTAR
+                  </Button>
+                </Link>
+              )}
+
+              {progressClassName === "w-1/6" && <div></div>}
 
               <Link href={nextPath}>
-                <Button className="bg-blue-500 text-white px-8 hover:bg-blue-600 cursor-pointer">
+                <Button className="bg-blue-500 text-white px-8 hover:bg-blue-600 cursor-pointer flex items-center gap-2">
                   PRÓXIMO
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
                 </Button>
               </Link>
             </div>

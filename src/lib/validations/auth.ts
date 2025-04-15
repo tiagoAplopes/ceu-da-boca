@@ -23,8 +23,13 @@ export const patientSchema = baseUserSchema.extend({
 
 export const dentistSchema = baseUserSchema.extend({
   type: z.literal("dentist"),
+  cpf: z.string().length(11, "CPF deve ter 11 dígitos"),
   cro: z.string().min(4, "CRO inválido"),
   croState: z.string().length(2, "Estado do CRO deve ter 2 caracteres"),
+  address: z.string().min(5, "Logradouro deve ter no mínimo 5 caracteres"),
+  number: z.string().min(1, "Número é obrigatório"),
+  complement: z.string().optional(),
+  district: z.string().min(2, "Bairro deve ter no mínimo 2 caracteres"),
 });
 
 export const registerSchema = z

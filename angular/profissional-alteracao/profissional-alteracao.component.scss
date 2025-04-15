@@ -1,0 +1,8 @@
+.form{
+  @apply flex flex-col gap-2 items-center w-full
+}
+
+.form div{
+  @apply text-blue-500 text-sm w-full bg-white h-10 flex flex-row items-center justify-start gap-2 px-3 rounded-lg
+}
+

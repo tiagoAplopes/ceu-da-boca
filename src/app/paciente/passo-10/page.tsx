@@ -62,9 +62,9 @@ export default function Passo10Page() {
         <div className="max-w-2xl mx-auto bg-white rounded-3xl shadow-sm overflow-hidden">
           <div className="bg-gradient-to-r from-[#0368df] to-[#1f51d1] p-8">
             {/* Illustration */}
-            <div className="relative w-60 h-60 mx-auto mb-8">
+            <div className="relative w-60 h-60 mx-auto">
               <Image
-                src="/teeth-illustration.svg"
+                src="/svg/dente-chorando.svg"
                 alt="Ilustração de dentes preocupados"
                 fill
                 className="object-contain drop-shadow-lg"
@@ -80,7 +80,7 @@ export default function Passo10Page() {
 
             {/* Action Button */}
             <Button
-              className="w-full bg-white hover:bg-gray-50 text-[#0368df] px-8 py-6 rounded-xl text-lg font-medium"
+              className="w-full bg-white hover:bg-gray-50 text-[#0368df] px-8 py-6 rounded-xl text-lg font-medium cursor-pointer"
               onClick={() => router.push("/paciente/nossa-constelacao")}
             >
               Acessar a Constelação

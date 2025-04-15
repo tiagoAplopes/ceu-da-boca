@@ -1,0 +1,42 @@
+<div class="min-h-screen  w-full flex flex-col bg-gray-300 py-5 px-6 items-center">
+  <header class="flex flex-row items-center justify-center">
+    <img (click)="goBack()" class="absolute left-5" src="../../../../assets/svg/v3/left-arrow-blue.svg" alt="" srcset=""/>
+    <p class="text-blue-600 font-bold">Editar especialidades</p>
+  </header>
+  <div class="gap-4 flex flex-col items-center max-w-[480px] mt-4">
+
+  <form action="" class="form">
+    <div>
+      <input id="clinica_geral_prevencao" name="clinica_geral_prevencao" [(ngModel)]="profissional.clinico_geral" type="checkbox" value="Clínica Geral/Prevenção">
+      <label for="clinica_geral_prevencao" >Clínica Geral/Prevenção</label>
+    </div>
+  </form>
+  <p class="text-[#AEAEAE] self-start text-base font-bold">Especialidades</p>
+  <form action="" class="form">
+      <div  *ngFor="let especialidade of especialidades">
+        <input type="checkbox" class="especialidade" value="{{especialidade.id}}" *ngIf="existeEspecialidade(especialidade)" checked="checked" id="especialidade-{{especialidade.id}}">
+        <input type="checkbox" class="especialidade" value="{{especialidade.id}}" *ngIf="!existeEspecialidade(especialidade)" id="especialidade-{{especialidade.id}}">
+        <label for="especialidade-{{especialidade.id}}">
+          {{especialidade.nome}}
+        </label>
+      </div>
+  </form>
+  <p class="text-[#AEAEAE] self-start text-base font-bold">Urgências</p>
+  <form action="" class="form">
+    <div class="" *ngFor="let urgencia of urgencias">
+      <input type="checkbox" class="urgencia" value="{{urgencia.id}}" *ngIf="existeUrgencia(urgencia)" checked="checked" id="urgencia-{{urgencia.id}}">
+      <input type="checkbox" class="urgencia" value="{{urgencia.id}}" *ngIf="!existeUrgencia(urgencia)" id="urgencia-{{urgencia.id}}">
+      <label for="urgencia-{{urgencia.id}}">
+        {{urgencia.nome}}
+      </label>
+    </div>
+  </form>
+  <div class="alert alert-danger" *ngIf="error" role="alert">
+    {{error}}
+  </div>
+  <div class="align-items-center">
+    <button type="button" class="bg-blue-600 text-white font-bold h-10 rounded-lg" style="width:150px" (click)="salvar()">Salvar</button>
+  </div>
+</div>
+</div>
+

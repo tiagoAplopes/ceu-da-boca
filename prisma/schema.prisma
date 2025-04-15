@@ -17,6 +17,7 @@ model User {
   id             String       @id @default(cuid())
   firstName      String
   lastName       String
+  cpf            String?     // Novo campo
   email          String       @unique
   whatsapp       String
   zipCode        String
@@ -24,11 +25,20 @@ model User {
   city           String
   hashedPassword String
   type           String // 'patient' ou 'dentist'
+  visits Int @default(0)
   cro            String? // opcional, só para dentistas
   croState       String? // opcional, só para dentistas
+  address        String? // opcional, só para dentistas
+  number         String? // opcional, só para dentistas
+  complement     String? // opcional, só para dentistas
+  district       String? // opcional, só para dentistas
+  image          String? // campo opcional para URL da imagem
+  urgency        String?     // Nova coluna para armazenar "12h" ou "24h"
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @updatedAt
   UserChange     UserChange[]
+  specialties    UserSpecialty[]
+  profissionalChanges ProfissionalChange[] // Adicionando a relação inversa
 }
 
 model UserChange {
@@ -40,6 +50,28 @@ model UserChange {
 
   @@unique([userId, changeId])
 }
+
+model UserSpecialty {
+  id          Int      @id @default(autoincrement())
+  userId      String
+  specialtyId String
+  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([userId, specialtyId])
+}
+
+model ProfissionalChange {
+  id        Int      @id @default(autoincrement())
+  userId    String
+  changeId  Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("profissional_changes")
+}
+
 
 
 

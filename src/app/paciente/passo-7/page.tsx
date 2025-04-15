@@ -1,11 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ChevronLeft } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 interface Alteracao {
@@ -63,7 +63,8 @@ export default function Passo7Page() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ changes: selectedAlteracoes }),
+          // Alterando de 'changes' para 'alteracoes' para corresponder à API
+          body: JSON.stringify({ alteracoes: selectedAlteracoes }),
         });
 
         if (!response.ok) {
@@ -90,18 +91,51 @@ export default function Passo7Page() {
     <main className="min-h-screen bg-gradient-to-br from-[#EBF3FF] to-white">
       <div className="container mx-auto max-w-2xl px-4 py-6">
         {/* Header */}
-        <div className="flex items-center gap-4 mb-8">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="rounded-full"
-            onClick={() => router.push("/paciente/passo-6")}
-          >
-            <ChevronLeft className="h-5 w-5 text-blue-600" />
-          </Button>
-          <h1 className="text-xl font-semibold text-blue-600">
-            Passo 7 - Alterações
-          </h1>
+        <div className="flex items-center justify-between w-full mb-4">
+          <Link href="/paciente/passo-6">
+            <Button
+              variant="ghost"
+              className="text-blue-600 hover:bg-blue-50 cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+            </Button>
+          </Link>
+          <h1 className="text-blue-600 text-xl font-medium">Alterações</h1>
+          <div className="flex gap-2">
+            <Link href="/paciente/home">
+              <Button
+                variant="ghost"
+                className="text-blue-600 hover:bg-blue-50 cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {/* Lista de Alterações */}
@@ -112,7 +146,7 @@ export default function Passo7Page() {
               className="rounded-lg border border-blue-100 bg-white p-4 transition-all hover:border-blue-200"
             >
               <div className="flex items-center justify-between">
-                <div className="flex items-start gap-3">
+                <div className="flex items-center gap-3">
                   <Checkbox
                     id={`alteracao-${alteracao.id}`}
                     checked={selectedAlteracoes.includes(alteracao.id)}

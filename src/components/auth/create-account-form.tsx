@@ -37,7 +37,14 @@ export function CreateAccountForm() {
       city: "",
       password: "",
       confirmPassword: "",
-      type: "patient",
+      type: "dentist",
+      cpf: "", // Adicione este campo
+      cro: "",
+      croState: "",
+      address: "",
+      number: "",
+      complement: "",
+      district: "",
     },
   });
 
@@ -230,12 +237,35 @@ export function CreateAccountForm() {
             <>
               <FormField
                 control={form.control}
+                name="cpf"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>CPF</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Digite apenas números"
+                        maxLength={11}
+                        {...field}
+                        value={field.value || ""} // Garante que o valor nunca será undefined
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
                 name="cro"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>CRO</FormLabel>
                     <FormControl>
-                      <Input placeholder="Número do CRO" {...field} />
+                      <Input
+                        placeholder="Número do CRO"
+                        {...field}
+                        value={field.value || ""} // Garante que o valor nunca será undefined
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -249,7 +279,71 @@ export function CreateAccountForm() {
                   <FormItem>
                     <FormLabel>Estado do CRO</FormLabel>
                     <FormControl>
-                      <Input placeholder="UF" maxLength={2} {...field} />
+                      <Input
+                        placeholder="UF"
+                        maxLength={2}
+                        {...field}
+                        value={field.value || ""}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="address"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Logradouro</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Rua, Avenida, etc" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="number"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Número</FormLabel>
+                    <FormControl>
+                      <Input placeholder="123" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="complement"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Complemento</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Apto, Sala, etc (opcional)"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="district"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Bairro</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Seu bairro" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

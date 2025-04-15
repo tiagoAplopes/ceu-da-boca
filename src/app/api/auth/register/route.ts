@@ -48,10 +48,17 @@ export async function POST(req: Request) {
         city,
         hashedPassword,
         type,
-        ...(type === "dentist" ? { 
-          cro: validatedFields.data.cro, 
-          croState: validatedFields.data.croState 
-        } : {}),
+        ...(type === "dentist"
+          ? {
+              cpf: validatedFields.data.cpf,
+              cro: validatedFields.data.cro,
+              croState: validatedFields.data.croState,
+              address: validatedFields.data.address,
+              number: validatedFields.data.number,
+              complement: validatedFields.data.complement,
+              district: validatedFields.data.district,
+            }
+          : {}),
       },
     });
 

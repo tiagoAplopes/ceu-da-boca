@@ -29,10 +29,10 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#EBF3FF] to-white p-4">
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-4xl">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-2xl font-bold">Olá, Tiago</h1>
+          <h1 className="text-2xl font-bold text-blue-700">Olá, Tiago</h1>
           <Popover>
             <PopoverTrigger asChild>
               <Button size="icon" variant="ghost" className="rounded-full">
@@ -62,7 +62,7 @@ export default function HomePage() {
 
         {/* Welcome Card */}
         <Card className="mb-8 bg-blue-600 text-white overflow-hidden">
-          <CardHeader className="flex flex-row items-center justify-between h-[100px] md:h-auto ">
+          <CardHeader className="flex flex-row items-center justify-between h-[80px] md:h-[100px]">
             <div className="max-w-[60%]">
               <CardTitle className="text-lg md:text-2xl">
                 Seja bem-vindo!
@@ -75,27 +75,56 @@ export default function HomePage() {
             <Image
               src="/svg/home-dentist.svg"
               alt="Dentista"
-              width={200}
+              width={300}
               height={200}
-              className="-mr-8 -mb-8 -mt-8 w-[160px] h-[160px] md:w-[200px] md:h-[200px] object-contain"
+              className="-mr-8 -mb-8 -mt-7 w-[140px] h-[140px] md:w-[170px] md:h-[170px] object-contain"
             />
           </CardHeader>
         </Card>
 
         {/* Cards Stack */}
         <div className="flex flex-col gap-4">
+          {/* Meu Espaço Card */}
+          <Link href="/paciente/perfil">
+            <Card className="cursor-pointer hover:bg-gray-50 transition-colors relative group border border-blue-100">
+              <CardHeader className="flex flex-row items-center gap-4 pr-0 pl-3">
+                <div className="w-[70px] h-[70px] rounded-full bg-gradient-to-b from-indigo-600 to-blue-500 flex items-center justify-center shadow-md overflow-hidden relative">
+                  <Image
+                    src="/svg/meu-espaco.svg"
+                    alt="Meu espaço"
+                    width={80}
+                    height={80}
+                    className="object-contain absolute scale-125"
+                  />
+                </div>
+                <div>
+                  <CardTitle className="mb-1">Meu Espaço</CardTitle>
+                  <CardDescription>
+                    Veja aqui como os seus dados são exibidos aos usuários
+                  </CardDescription>
+                </div>
+              </CardHeader>
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground group-hover:text-foreground transition-colors">
+                <ChevronRight size={24} />
+              </div>
+            </Card>
+          </Link>
+
           {/* Card 1 */}
           <Link href="/paciente/comecar-jornada">
-            <Card className="cursor-pointer hover:bg-accent transition-colors relative group">
+            <Card className="cursor-pointer hover:bg-gray-50 transition-colors relative group border border-blue-100">
               <CardHeader className="flex flex-row items-center gap-4 pr-0 pl-3">
-                <Image
-                  src="/svg/v3/Group 98.png"
-                  alt="Começar jornada"
-                  width={60}
-                  height={60}
-                />
+                <div className="w-[70px] h-[70px] rounded-full bg-gradient-to-b from-indigo-600 to-blue-500 flex items-center justify-center shadow-md overflow-hidden relative">
+                  <Image
+                    src="/svg/comecar-jornada.svg"
+                    alt="Começar jornada"
+                    width={80}
+                    height={80}
+                    className="object-contain absolute scale-125"
+                  />
+                </div>
                 <div>
-                  <CardTitle>Comece sua jornada</CardTitle>
+                  <CardTitle className="mb-1">Comece sua jornada</CardTitle>
                   <CardDescription>
                     Dê os primeiros passos na sua jornada conosco.
                   </CardDescription>
@@ -109,16 +138,19 @@ export default function HomePage() {
 
           {/* Card 2 */}
           <Link href="/paciente/alteracoes-encontradas">
-            <Card className="cursor-pointer hover:bg-accent transition-colors relative group">
+            <Card className="cursor-pointer hover:bg-gray-50 transition-colors relative group border border-blue-100">
               <CardHeader className="flex flex-row items-center gap-4 pr-0 pl-3">
-                <Image
-                  src="/svg/v3/Frame 4.png"
-                  alt="Alterações encontradas"
-                  width={60}
-                  height={60}
-                />
+                <div className="w-[70px] h-[70px] rounded-full bg-gradient-to-b from-indigo-600 to-blue-500 flex items-center justify-center shadow-md overflow-hidden relative">
+                  <Image
+                    src="/svg/alteracoes.svg"
+                    alt="Alterações encontradas"
+                    width={80}
+                    height={80}
+                    className="object-contain absolute scale-125"
+                  />
+                </div>
                 <div>
-                  <CardTitle>Alterações encontradas</CardTitle>
+                  <CardTitle className="mb-1">Alterações encontradas</CardTitle>
                   <CardDescription>
                     Confira as últimas atualizações e mudanças.
                   </CardDescription>
@@ -132,41 +164,21 @@ export default function HomePage() {
 
           {/* Card 3 */}
           <Link href="/paciente/nossa-constelacao">
-            <Card className="cursor-pointer hover:bg-accent transition-colors relative group">
+            <Card className="cursor-pointer hover:bg-gray-50 transition-colors relative group border border-blue-100">
               <CardHeader className="flex flex-row items-center gap-4 pr-0 pl-3">
-                <Image
-                  src="/svg/v3/Frame 10.png"
-                  alt="Nossa constelação"
-                  width={60}
-                  height={60}
-                />
+                <div className="w-[70px] h-[70px] rounded-full bg-gradient-to-b from-indigo-600 to-blue-500 flex items-center justify-center shadow-md overflow-hidden relative">
+                  <Image
+                    src="/svg/constelacao.svg"
+                    alt="Nossa constelação"
+                    width={80}
+                    height={80}
+                    className="object-contain absolute scale-125"
+                  />
+                </div>
                 <div>
-                  <CardTitle>Nossa constelação</CardTitle>
+                  <CardTitle className="mb-1">Nossa constelação</CardTitle>
                   <CardDescription>
                     Explore nossa comunidade e conexões.
-                  </CardDescription>
-                </div>
-              </CardHeader>
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground group-hover:text-foreground transition-colors">
-                <ChevronRight size={24} />
-              </div>
-            </Card>
-          </Link>
-
-          {/* Novo Card - Meu Espaço */}
-          <Link href="/paciente/perfil">
-            <Card className="cursor-pointer hover:bg-accent transition-colors relative group">
-              <CardHeader className="flex flex-row items-center gap-4 pr-0 pl-3">
-                <Image
-                  src="/svg/v3/Frame 10 (1).png"
-                  alt="Meu espaço"
-                  width={60}
-                  height={60}
-                />
-                <div>
-                  <CardTitle>Meu Espaço</CardTitle>
-                  <CardDescription>
-                    Veja aqui como os seus dados são exibidos aos usuários
                   </CardDescription>
                 </div>
               </CardHeader>
